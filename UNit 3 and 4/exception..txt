@@ -1,0 +1,167 @@
+Python Exception Handling :Avoiding code break using exception handling,
+ Safe guarding file operation using exception handling, 
+Handling and helping developer with error code,
+ Programming using Exception handling
+
+=>EXCEPTION HANDLING:-
+-In any programming language there are 2 types of errors are possible.
+ 1. Syntax Errors:-
+Syntax errors or compile time errors are the errors due to which your program fails to compile.
+ Such errors are detected at the compile time itself.
+The errors which occurs because of invalid syntax are called syntax errors
+e.g-For example, if you don’t write a colon after the if statement-
+def check_equality(str1, str2):
+    if str1 > str2
+print(str1, 'is greater than', str2)
+
+ 2. Runtime Errors
+=>Exceptions:-
+Even if a statement or expression is syntactically correct it may result in an error at run time. 
+Errors detected during 
+runtime are called exceptions and they disrupt the normal execution flow of the program.
+For example in the following program there is an attempt to divide by zero which results in ZeroDivisionError at runtime.
+def divide_num(num1, num2):
+ return num1/num2
+
+divide_num(10,0)
+
+-Exceptions are 5 types:
+1)	ZeroDivisionError
+2)	NameError
+3)	IndentationError
+4)	IOError
+5)	EOFError
+6)	ValueError
+=>EXCEPTION HANDLING-
+Here the code which might have exception have to place in try block. The keywords used are try, except, finally
+
+Syntax:
+try:
+
+	suspicious code
+
+except exception1:
+	block1 code
+except exception2:
+	block2 code
+Finally:
+
+
+
+ex1: =>Example of IOError
+try:							#try block
+fileptr=open("file7.txt","r")
+except IOError:					#except block
+print("the file is not found")
+else:							#else block
+print("the file opened successfully")
+fileptr.close()	
+print("end of program")
+=>>single except block with multiple exceptions-
+
+ try: 
+  x=int(input("Enter First Number: ")) 
+  y=int(input("Enter Second Number: ")) 
+  print(x/y) 
+ except (ZeroDivisionError,ValueError) as msg: 
+  print("Plz Provide valid numbers only and problem is: ",msg) 
+
+
+=>Finally:
+-A final block will be executed regardless of an error.
+
+-It will execute even if an exception exists or else not exist.
+
+
+try:
+ fileptr=open("file.txt","a")
+ fileptr.write("sample text")
+except IOError:
+ print("the file error")
+else:
+ print("let us read")
+ fileptr.close()
+finally:
+ 
+ print("file closed")
+ 
+
+=>e.g on valueError
+def inputnumber():
+    try:
+        r=int(input("enter a no"))
+    except ValueError:
+       print("wrong entry")
+    else:
+       print("right entry")
+    finally:
+       print("end of try")
+inputnumber()
+
+
+*** Note: There is only one situation where finally block won't be executed ie whenever 
+we are using os._exit(0) function.
+e.g- imports 
+      try: 
+        print("try") 
+        os._exit(0) 
+      except NameError: 
+        print("except") 
+      finally: 
+        print("finally")
+
+
+=>RAISE:-
+
+An exception can be raised using the raise clause in python.
+Syntax:
+raise exception_class
+
+=>TYPES of Exceptions:
+
+In Python there are 2 types of exceptions are possible.
+1. Predefined Exceptions
+2. User Definded Exceptions
+
+2.Python Custom Exceptions/User-Defined Exception:
+In Python, we can define custom exceptions by creating a new class that is derived from
+ the built-in Exception class.
+
+
+Syntax:
+ class classname(predefined exception class name):
+ def __init__(self,arg):
+ self.msg=arg
+
+
+e.g-class error(Exception):
+    pass
+class Derived_smallvalue(error):
+    pass
+class Derived_largevalue(error):
+    pass
+n=10
+while True:
+    try:
+i=int(input("enter no"))
+        if(i<n):
+            raise Derived_smallvalue
+elif(i>n):
+            raise Derived_largevalue
+        break
+    except Derived_smallvalue:
+print("it is less than 10")
+    except Derived_largevalue:
+print("it is greater than 10")
+print("congrats, it is", 10)
+ 
+
+
+
+
+
+
+
+
+
+

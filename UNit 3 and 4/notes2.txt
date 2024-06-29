@@ -1,0 +1,314 @@
+Python Object Oriented Programming – Oops: Concept of class, object and instances, 
+Constructor, class attributes and destructors, Real time use of class in live projects,
+ Inheritance , overlapping and overloading operators, Adding and retrieving dynamic attributes of classes ,          
+Programming using Oops support
+
+*Python Object Oriented Programming – Oops: 
+.objects are real world entities.(data n methods)
+   Syntax to create object: referencevariable = classname()
+.classes are group of these entities.
+ 
+class employee:
+  def putdata(self):
+     self.id=int(input("enter employee id"))
+     self.name=input("enter employee name")
+     self.salary=float(input("enter employee salary"))
+  def display(self):
+     print("employee id:",self.id)
+     print("employee name:",self.name)
+     print("employee salary:",self.salary)
+a=employee()
+a.putdata()
+a.display()
+ 
+Q>Program: Write a Python program to create a Student class and Creates an object to it.
+ Call the 
+method talk() to display student details
+
+
+
+
+
+
+       class Student: 
+       def __init__(self,name,rollno,marks): 
+       self.name=name 
+       self.rollno=rollno 
+       self.marks=marks 
+
+       def talk(self): 
+       print("Hello My Name is:",self.name) #This line assigns the name parameter passed to the name attribute of the current instance (object) of the class.
+       print("My Rollno is:",self.rollno) 
+       print("My Marks are:",self.marks) 
+ 
+ 
+
+       s1=Student("Durga",101,80) 
+       s1.talk()
+
+*Self variable:
+self is the default variable which is always pointing to current object (like this keyword in Java)
+By using self we can access instance variables and instance methods of object.
+Note:
+1. self should be first parameter inside constructor 
+ def __init__(self):
+2. self should be first parameter inside instance methods
+ def talk(self): 
+
+* The __init__() function is called automatically every time the class is being used 
+to create a new object.
+
+
+
+
+
+Output:
+
+Hello My Name is: Durga
+My Rollno is: 101
+My Marks are: 80
+ 
+CONSTRUCTOR:-
+
+
+- The name of the constructor should be __init__(self)
+- Constructor will be executed automatically at the time of object creation.
+- The main purpose of constructor is to declare and initialize instance variables.
+- Constructor can take atleast one argument(atleast self)
+
+
+
+
+*The __str__() function controls what should be returned when the class object is represented
+ as a string.
+
+
+DESTRUCTOR:-
+-Destructors are called when an object gets destroyed.
+-The __del__() method is a known as a destructor method in Python.__del __() Method: In Python, 
+the __del __() is referred to as a destructor method. When all references to an object have been
+ erased, i.e.,
+ 
+
+def __del__(self):
+    #body of destructor
+
+https://pynative.com/wp-content/uploads/2021/07/python_destructor_to_destroy_object.png
+
+*INHERITANCE:-
+.Inheritance allows us to define a class that inherits all the methods and properties from another class.
+
+.Parent class is the class being inherited from, also called base class.
+
+.Child class is the class that inherits from another class, also called derived class.
+
+class Person:
+    def __init__(self, fname, lname):
+        self.firstname = fname
+        self.lastname = lname
+
+    def printname(self):
+        print(self.firstname, self.lastname)
+
+# Create a Person object and execute the printname method
+x = Person("John", "Doe")
+x.printname()
+
+
+# Define the Student class inheriting from Person
+class Student(Person):
+    def __init__(self, fname, lname):
+        super().__init__(fname, lname)
+
+# Example usage
+y = Student("Alice", "Smith")
+y.printname()
+
+*Multiple inheritance:
+class Calculation1:  
+    def Summation(self,a,b):  
+        return a+b;  
+class Calculation2:  
+    def Multiplication(self,a,b):  
+        return a*b;  
+class Derived(Calculation1,Calculation2):  
+    def Divide(self,a,b):  
+        return a/b;  
+d = Derived()  
+print(d.Summation(10,20))  
+print(d.Multiplication(10,20))  
+print(d.Divide(10,20)) 
+
+*OPERATOR OVERLOADING:-
+-The process of utilizing an operator in different ways depending on the operands is
+ known 
+as operator overloading.
+-For example, the operator ‘+‘ can be used to add two integers, join two strings,
+ or merge two lists. 
+It is possible since the ‘+’ operator is overloaded by the int and str classes.
+
+-class student:
+    def __init__(self,m1,m2) :
+        self.m1=m1
+        self.m2=m2
+
+s1=student(58,69)
+s2=student(60,67)
+
+s3=s1+s2
+print(s3)
+
+o/p:error
+-class student:
+    def __init__(self,m1,m2) :
+        self.m1=m1
+        self.m2=m2
+
+    def __add__(self,other):
+        m1= self.m1+other.m1
+        m2=self.m2+other.m2
+        s3=student(m1,m2)
+
+        return s3
+    def __gt__(self, other):  
+        if(self.m1 > other.m1):  
+            return True  
+        else:  
+            return False  
+
+s1=student(58,69)
+s2=student(60,67)
+
+s3=s1+s2
+
+print(s3.m2)
+if(s1 > s2):  
+    print ("The s1 is greater than s2")  
+else:  
+    print ("The s2 is greater than s1") 
+
+https://www.programiz.com/python-programming/operator-overloading 
+
+
+-Operator	Expression	Internally
+Addition	p1 + p2	     p1.__add__(p2)
+Subtraction	p1 - p2	     p1.__sub__(p2)
+Multiplication	p1 * p2	     p1.__mul__(p2)
+Power	        p1 ** p2     p1.__pow__(p2)
+
+*ADDING AND RETRIEVING DYNAMIC ATTRIBUTES OF CLASSES:-
+=>Dynamic attributes are ones that are defined after the object instance has been created.
+=>setattr()-
+-The setattr() method is a built-in function in Python that allows you to
+ set the value of an attribute of an 
+object dynamically. 
+-In simpler terms, you can use this method to add new attributes to an object at runtime.
+      setattr(object, name, value)
+
+
+e.g-class Person:
+    def __init__(self, name):
+        self.name = name
+p = Person('John')
+setattr(p, 'age', 25)
+
+print(p.age)
+
+=>getattr()-
+-The getattr() method is a built-in function in Python that allows you to get the value of an 
+attribute
+ of an object dynamically. 
+-In simpler terms, you can use this method to retrieve the value of an attribute based on its name.
+           getattr(object, name[, default])
+*Here, object is the object whose attribute you want to retrieve,
+ name is a string representing the name of the attribute you want to retrieve, and 
+default is an optional parameter that specifies what value should be returned if the attribute does 
+not exist.
+=>The delattr() function will delete the specified attribute from the specified object.
+delattr(object, attribute)
+
+
+
+
+
+
+
+
+***class Product:
+     def __init__(self, name, price):
+        self.name = name
+        self.price = price
+
+# Creating an instance
+product = Product("Phone", 500)
+
+# Adding dynamic attributes
+product.category = 'Electronics'
+setattr(product, 'brand', 'Samsung')
+
+# Accessing dynamic attributes
+print(product.category)   # Output: Electronics
+print(getattr(product, 'brand'))  # Output: Samsung
+
+-Checking for Attribute Existence:
+
+You can check if an attribute exists using the hasattr() function:
+
+if hasattr(person, 'age'):
+    print("Age attribute exists.")
+else:
+    print("Age attribute does not exist.")
+
+-Deleting Dynamic Attributes:
+
+You can delete dynamic attributes using the del statement or the delattr() function:
+
+del person.age
+delattr(person, 'age')
+
+
+
+Q>Write a Python program to create a class representing a Circle. 
+Include methods to calculate its area and perimeter.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+import math
+
+class Circle:
+    def __init__(self, radius):
+        self.radius = radius
+
+    def area(self):
+        return math.pi * self.radius ** 2
+
+    def perimeter(self):
+        return 2 * math.pi * self.radius
+
+# Example usage:
+radius = float(input("Enter the radius of the circle: "))
+circle = Circle(radius)
+print("Area of the circle:", circle.area())
+print("Perimeter of the circle:", circle.perimeter())
+
+
+
+
+
+
+
+
+
+
