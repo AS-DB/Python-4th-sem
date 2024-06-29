@@ -1,0 +1,28 @@
+Python Q/A-
+1-What is Python? Describe its features and applications?
+Ans-Python is a High-level language. The following Features of Python listed below:
+Simple : Python is a simple and small programming language. Reading a program of python language feels almost like reading simple English. This is the main fact the greatest strength of python which allows the programmer to concentrate on the solution to the problem rather than the language itself.
+Open Source : Python is an open-source software. Anyone can freely distribute it, read the source code, edit it easily.
+
+High-level Language: When writing programs in python, the programmers don’t have to worry about the low-level details like managing the memory used by the program. Python is a High-level language that needed to concentrate on writing solutions above problems.
+
+Interactive: Python programs work in an interactive mode which allows us interactive testing and debugging of a piece of code. Most of the Programmers can easily interact with the interpreter directly.
+
+Object-Oriented: Python supports object-oriented as well as procedure-oriented programming language. In Python, while OOP technique, encapsulates data and functionalities within objects.
+
+Dynamic: Python executes dynamically, programs are written in python can be copied. Python used for the flexible development of applications.
+
+Secure: Python language environment is much more secure than other languages like C++ and Java. In Python, Modules can distribute to prevent altering the source code, Apart from this, additional security checks can easily add to implement additional security features.
+
+Interpreted : Python is processed at run-time by the interpreter. So, there is no need to compile a program before executing it. You can easily run the program. Generally, Python converts the source code into an intermediate code that says called Bytecode. Then it translated into the native language of your computer so that it can be executed.
+
+Multi-threaded: Python supports multi-threading that is executing more than one process of a program simultaneously. So, it allows programmers to perform process management tasks.
+
+Garbage Collection : Python run-time environment handles garbage collection of all python objects.
+
+Portable: Python is a portable language and the programs behave the same on a wide variety of hardware platforms and it has the same interface on all platforms. The programs work on any operating system like Linux, Windows, MAC, Solaris etc.
+
+2-Differentiate between lists and tuples in Python?
+3-Explain the need for continue and break statements. Write a program to check whether a 
+number is prime or not. Prompt the user for input.
+4-
