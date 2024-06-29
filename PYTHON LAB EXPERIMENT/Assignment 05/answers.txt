@@ -1,0 +1,36 @@
+2.
+def remove_duplicates(dictionary):
+    unique_values = {}  # Create an empty dictionary to store unique values
+    for key, value in dictionary.items():
+        unique_values.setdefault(value, key)
+    return {value: key for key, value in unique_values.items()}
+
+# Example usage:
+input_dict = {'a': 1, 'b': 2, 'c': 1, 'd': 3, 'e': 2}
+result_dict = remove_duplicates(input_dict)
+print("Original Dictionary:", input_dict)
+print("Dictionary after removing duplicate values:", result_dict)
+
+
+3.
+input_set = {1, 2, 3, 4, 5}  # Example input set
+new_set = set()  # Initialize an empty set to store copied elements
+
+for item in input_set:
+    new_set.add(item)  # Copy each element from the input set to the new set
+
+print("Original Set:", input_set)
+print("Copied Set:", new_set)
+
+
+4.
+# Input sets
+set1 = set(input("Enter elements of the first set separated by spaces: ").split())
+set2 = set(input("Enter elements of the second set separated by spaces: ").split())
+
+# Perform set operations and print results
+print("Union:", set1.union(set2))
+print("Intersection:", set1.intersection(set2))
+print("Difference (Set 1 - Set 2):", set1.difference(set2))
+print("Difference (Set 2 - Set 1):", set2.difference(set1))
+print("Symmetric Difference:", set1.symmetric_difference(set2))

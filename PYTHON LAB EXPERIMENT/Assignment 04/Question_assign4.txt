@@ -1,0 +1,11 @@
+wap to print second largest and smallest element in a list of 10 integer without using the sort function.
+
+wap to create two lists first list containing 5 integer and a second list containg 5 string.print both list one element from each list combined at a time.
+
+wap to create an integer list of 20 element increases the odd-valued elements by 5.
+
+wap to create a function thtat prints the first 15 terms of the fibonacchi series without using recursion.
+
+wap to create a function that takes the list as an argument and returns the even value of thre list. print the new list even values
+
+wap to calculate the factorial of a number using recursion.

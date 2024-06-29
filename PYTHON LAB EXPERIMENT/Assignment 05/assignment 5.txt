@@ -1,0 +1,7 @@
+1.wap to input two dicitionary an dprints the value by merging the two dictionaries.
+
+2.wap to enter a dictionary and remove the duplicate value inside the dictionary.
+
+3.wap to enter a set and copy the content of the set into a new set one element at a time.
+
+4>wap to enter two sets and performs all the set operations on it.

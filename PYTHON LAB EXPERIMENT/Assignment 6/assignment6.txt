@@ -1,0 +1,11 @@
+1.wap to enter two different sets with string element combine both the set remove any dupliccate are present, printthe new set.
+
+2.wap to triple all numbers in a given list of integers. use map()
+
+3.wap to add three given list using python map and lambda
+
+4.wap to create a create a list containing the power of said number in bases raised to the corresponding number in the index using map.
+
+5.wap to convert all the characters into uppercase and lowercase and eliminate duplicate letters from a given sequence.use map() function.
+
+6.wap to covert a given list of  integer and a tuple of a integer in a list of a string using map()
